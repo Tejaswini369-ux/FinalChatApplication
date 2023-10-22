@@ -5,7 +5,7 @@ To run the frontend
 --npm install
 --npm start
 
-To run the fuck backend 
+To run the backend 
 --cd backend
 --npm install
 --nodemon index
