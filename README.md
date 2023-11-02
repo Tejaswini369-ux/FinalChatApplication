@@ -23,6 +23,6 @@ In this I implemented chat application with the following functions
 9.Included Bellicon for notifications ,It will show the no.of notifications you have including group chat 
 10.It also displays Loading.. if the opposite person is typing and automatically stops ,when typing stops,in 3sec. 
 
-If you are logging in with another user first have to logout from that user on defferent tab and after logging in refresh the page and check the profile
-It works almost fine but if there are anychances that u are not getting desired result just refresh the page once and check the profile
+If you are logging in with another user first have to logout from that user on different tab and after logging in refresh the page and check the profile
+It works almost fine but if there are any chances that you are not getting desired result just refresh the page once and check the profile
 
