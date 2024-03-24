@@ -10,8 +10,12 @@ const {notFound,errorHandler} =require("./middlewares/errorMiddleware")
 const path=require('path')
 const cors=require('cors')
 
+const corsOptions = {
+  origin: ["https://chatapplication-isf8.onrender.com", "http://localhost:3000"],
+};
+
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 
 const connectDB =require("./config/db");
 dotenv.config();
