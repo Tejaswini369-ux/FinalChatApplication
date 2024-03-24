@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "install-server": "cd backend && npm install",
     "start-server": "cd backend && node server.js",
-    "install-client": "cd frontend && npm install --save-dev babel-loader @babel/core @babel/preset-react",
+    "install-client": "cd frontend && npm install --force babel-loader @babel/core @babel/preset-react",
     "build-client": "cd frontend && npm run build",
     "start-client": "cd frontend && npm run start"
   },
