@@ -6,7 +6,6 @@ import { getSender, getSenderFull } from '../config/ChatLogics';
 import ProfileModal from './Authentication/miscellaneous/ProfileModal';
 import UpdateGroupChatModal from './Authentication/miscellaneous/UpdateGroupChatModal';
 import axios from 'axios';
-import "./styles.css"
 import ScrollableChat from './ScrollableChat';
 import io from "socket.io-client"
 
@@ -218,9 +217,14 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                 margin="auto"
               />
             ) : (
-              <div className="messages">
+              <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                overflowY: 'scroll',
+                scrollbarWidth: 'none',
+              }}>
                 <ScrollableChat messages={messages} />
-              </div>
+              </div>              
             )}
             <FormControl
               onKeyDown={sendMessage}
