@@ -38,11 +38,11 @@ const Login = () => {
       };
 
       const { data } = await axios.post(
-        "/api/user/login",
+        "https://finalchatapplication.onrender.com/api/user/login",
         { email, password },
         config
       );
-
+      console.log("logindata",data)
       toast({
         title: "Login Successful",
         status: "success",

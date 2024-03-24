@@ -10,7 +10,7 @@ import "./styles.css"
 import ScrollableChat from './ScrollableChat';
 import io from "socket.io-client"
 
-const ENDPOINT="http://localhost:5000";
+const ENDPOINT="https://finalchatapplication.onrender.com";
 var socket,selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
@@ -36,7 +36,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       setLoading(true);
 
       const { data } = await axios.get(
-        `/api/message/${selectedChat._id}`,
+        `https://finalchatapplication.onrender.com/api/message/${selectedChat._id}`,
         config
       );
       setMessages(data);
@@ -97,7 +97,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             },
         };
         const { data } = await axios.post(
-          "/api/message",
+          "https://finalchatapplication.onrender.com/api/message",
           {
             content: newMessage,
             chatId: selectedChat,
