@@ -16,7 +16,7 @@ const SideDrawer = () => {
   const [searchResult, setSearchResult] = useState([]);
   const [loading, setLoading] = useState(false);
   const [loadingChat, setLoadingChat] = useState(false);
-  const {user,setSelectedChat,chats,setChats,notification,setNotification} =ChatState();
+  const {user,setSelectedChat,chats,setChats,notification,setNotification} = ChatState();
   const history=useHistory();
    const logoutHandler = () => {
     localStorage.removeItem("userInfo");
@@ -36,7 +36,6 @@ const SideDrawer = () => {
     }
       try {
       setLoading(true);
-
       const config = {
         headers: {
           Authorization: `Bearer ${user.token}`,
@@ -44,10 +43,10 @@ const SideDrawer = () => {
       };
 
       const { data } = await axios.get(`/api/user?search=${search}`, config);
-
       setLoading(false);
       setSearchResult(data);
     } catch (error) {
+      console.log(error)
       toast({
         title: "Error Occured!",
         description: "Failed to Load the Search Results",
@@ -60,16 +59,15 @@ const SideDrawer = () => {
   };
 
    const accessChat = async (userId) => {
-    console.log(userId);
 
     try {
       setLoadingChat(true);
       const config = {
         headers: {
-          "Content-type": "application/json",
           Authorization: `Bearer ${user.token}`,
         },
-      };
+      };     
+      console.log(config)
       const { data } = await axios.post(`/api/chat`, { userId }, config);
 
       if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);

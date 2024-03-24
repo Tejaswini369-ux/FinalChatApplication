@@ -90,13 +90,12 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
     if((e).key==="Enter" && newMessage){
       socket.emit('stop typing',selectedChat._id)
    try{
-  const config = {
-          headers: {
-            "Content-type": "application/json",
-            Authorization: `Bearer ${user.token}`,
-          },
+    const config = {
+            headers: {
+              "Content-type": "application/json",
+              Authorization: `Bearer ${user.token}`,
+            },
         };
-        setNewMessage("");
         const { data } = await axios.post(
           "/api/message",
           {
@@ -105,9 +104,11 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           },
           config
         );
+        setNewMessage("");
         socket.emit("new message",data)
         setMessages([...messages, data]);
    }catch(error){
+    console.log(error);
       toast({
           title: "Error Occured!",
           description: "Failed to send the Message",
@@ -119,7 +120,6 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
    }
     }
   }
-  
 
   const typingHandler=(e)=>{
     setNewMessage(e.target.value);
