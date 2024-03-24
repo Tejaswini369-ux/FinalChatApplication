@@ -1,24 +1,17 @@
 {
-  "name": "start-a-word",
+  "name": "finalchatapplication",
   "version": "1.0.0",
-  "main": "server.js",
+  "description": "To run the frontend\r --cd frontend\r --npm install\r --npm start",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon backend/server.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-server": "cd backend && npm install",
+    "start-server": "cd backend && node server.js",
+    "install-client": "cd frontend && npm install",
+    "build-client": "cd frontend && npm run build",
+    "start-client": "cd frontend && npm run start"
   },
-  "author": "Tejaswini",
-  "license": "ISC",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "colors": "^1.4.0",
-    "dotenv": "^9.0.2",
-    "express": "^4.17.1",
-    "express-async-handler": "^1.1.4",
-    "jsonwebtoken": "^9.0.2",
-    "mongodb": "4.0",
-    "mongoose": "^5.12.9",
-    "nodemon": "^2.0.7",
-    "socket-io": "^1.0.0",
-    "socket.io": "^4.7.2"
-  },
-  "description": ""
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
