@@ -11,7 +11,7 @@ const path=require('path')
 const cors=require('cors')
 
 const corsOptions = {
-  origin: ["https://chatapplication-isf8.onrender.com", "http://localhost:3000"],
+  origin: ["https://chatapplication-isf8.onrender.com", "http://localhost:3000","https://final-chat-application.vercel.app/"],
 };
 
 app.use(express.json());
