@@ -5,7 +5,7 @@ import { VStack } from "@chakra-ui/layout";
 import { useToast } from "@chakra-ui/toast";
 import axios from "axios";
 import { useState } from "react";
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 
 const Signup = () => {
@@ -18,8 +18,7 @@ const Signup = () => {
      const [loading,setLoading]=useState(false)
     const [confirmpassword,setConfirmpassword]=useState()
      const toast = useToast()
-     const history=useHistory()
-
+     const navigate=useNavigate()
     //  submithandler from here
 
   const submitHandler = async () => {
@@ -72,7 +71,7 @@ const Signup = () => {
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
-      history.push("/chat");
+      navigate("/chat");
     } catch (error) {
       toast({
         title: "Error Occured!",

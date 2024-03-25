@@ -3,13 +3,13 @@ import {BellIcon,ChevronDownIcon} from '@chakra-ui/icons';
 import React, { useState } from 'react'
 import { ChatState } from '../../../context/ChatProvider';
 import ProfileModal from './ProfileModal';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import axios from 'axios';
 import ChatLoading from '../../ChatLoading';
 import UserListItem from '../../UserAvatar/UserListItem';
 import { getSender } from '../../../config/ChatLogics';
 import {Effect} from "react-notification-badge"
 import NotificationBadge from 'react-notification-badge'
+import { useNavigate } from 'react-router-dom';
 
 const SideDrawer = () => {
   const [search, setSearch] = useState("");
@@ -17,10 +17,10 @@ const SideDrawer = () => {
   const [loading, setLoading] = useState(false);
   const [loadingChat, setLoadingChat] = useState(false);
   const {user,setSelectedChat,chats,setChats,notification,setNotification} = ChatState();
-  const history=useHistory();
+   const navigate=useNavigate()
    const logoutHandler = () => {
     localStorage.removeItem("userInfo");
-    history.push("/");
+    navigate("/");
   };
   const toast=useToast();
   const handleSearch=async()=>{
