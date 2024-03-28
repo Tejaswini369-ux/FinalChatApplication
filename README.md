@@ -1,5 +1,7 @@
 # FinalChatApplication
 
+https://final-chat-application.vercel.app/
+
 To run the frontend
 --cd frontend
 --npm install
